@@ -30,9 +30,16 @@ function Home() {
                               marginTop: "25px",
                               marginLeft: "auto",
                               marginRight: "10px",
+                              marginBottom: "0px",
                               display: "block"
                             }}
           />
+        </Row>
+        <Row>
+          <h2 style={{  marginRight: "4%",
+                        marginLeft: "auto",
+                        marginTop: "0px",
+                        color: "white"  }}>কৃষক হাসলে হাসে দেশ</h2>
         </Row>
         <Row style={{ marginTop: "10%",
                       marginLeft: "5%",
