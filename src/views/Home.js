@@ -9,8 +9,12 @@ import {
 function Home() {
   return (
     <>
+      <Container fluid>
+        <Row>
+          Rafi
+        </Row>
+      </Container>
     </>
-
   )
 }
 
