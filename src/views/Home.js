@@ -6,12 +6,15 @@ import {
   Col,
   Modal
 } from "react-bootstrap"
-import bd from "../assets/img/homepage/BG.png"
+import bg from "../assets/img/homepage/BG.png"
+import fosholerDoctorLogo from "../assets/img/homepage/fosholer-doctor.png"
+import forumLogo from "../assets/img/homepage/forum.png"
+import krishiBazarLogo from "../assets/img/homepage/krishi-bazar.png"
 
 function Home() {
   return (
     <>
-      <Container fluid style={{ backgroundImage: `url(${bd})`,
+      <Container fluid style={{ backgroundImage: `url(${bg})`,
                                 backgroundSize: "100%",
                                 overflow: "hidden",
                                 backgroundRepeat: "no-repeat",
@@ -22,9 +25,20 @@ function Home() {
                       marginRight: "5%",
                       position: "center",}}>
             <Col>
-              <Card className="card-stats">
+              <Card>
                 <Card.Body>
-                  
+                  <div style={{ alignItems: "center" }}>
+                  <img  src={krishiBazarLogo}
+                        alt="Not Found"
+                        style = {{
+                          width: "80px",
+                          height: "80px",
+                          marginLeft: "auto",
+                          marginRight: "auto",
+                          display: "block"
+                        }}
+                  />
+                  </div>
                 </Card.Body>
                 <Card.Footer>
                   <h3 style={{ textAlign: "center" }}>কৃষি বাজার</h3>
