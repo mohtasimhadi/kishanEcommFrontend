@@ -6,7 +6,7 @@ import {
   Col,
   Modal
 } from "react-bootstrap"
-import bd from "../assets/img/BG.png"
+import bd from "../assets/img/homepage/BG.png"
 
 function Home() {
   return (
