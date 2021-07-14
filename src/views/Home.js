@@ -10,6 +10,7 @@ import bg from "../assets/img/homepage/BG.png"
 import fosholerDoctorLogo from "../assets/img/homepage/fosholer-doctor.png"
 import forumLogo from "../assets/img/homepage/forum.png"
 import krishiBazarLogo from "../assets/img/homepage/krishi-bazar.png"
+import { Link } from "react-router-dom"
 
 function Home() {
   return (
@@ -25,25 +26,25 @@ function Home() {
                       marginRight: "5%",
                       position: "center",}}>
             <Col>
-              <Card>
-                <Card.Body>
-                  <div style={{ alignItems: "center" }}>
-                  <img  src={krishiBazarLogo}
-                        alt="Not Found"
-                        style = {{
-                          width: "80px",
-                          height: "80px",
-                          marginLeft: "auto",
-                          marginRight: "auto",
-                          display: "block"
-                        }}
-                  />
-                  </div>
-                </Card.Body>
-                <Card.Footer>
-                  <h3 style={{ textAlign: "center" }}>কৃষি বাজার</h3>
-                  </Card.Footer>
-              </Card>
+              <Link to="/krishi-bazar">
+                <Card href="/krishi-bazar">
+                  <Card.Body>
+                    <img  src={krishiBazarLogo}
+                          alt="Not Found"
+                          style = {{
+                            width: "80px",
+                            height: "80px",
+                            marginLeft: "auto",
+                            marginRight: "auto",
+                            display: "block"
+                          }}
+                    />
+                  </Card.Body>
+                  <Card.Footer>
+                    <h3 style={{ textAlign: "center" }}>কৃষি বাজার</h3>
+                    </Card.Footer>
+                </Card>
+              </Link>
             </Col>
             <Col>
               <Card className="card-stats">
