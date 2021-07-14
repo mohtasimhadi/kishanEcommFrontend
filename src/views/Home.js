@@ -26,20 +26,13 @@ function Home() {
           <img  src={kishanLogo}
                             alt="Not Found"
                             style = {{
-                              height: "250px",
-                              marginTop: "25px",
+                              width: "40%",
+                              marginTop: "5%",
                               marginLeft: "auto",
                               marginRight: "10px",
-                              marginBottom: "0px",
-                              display: "block"
+                              display: "block",
                             }}
           />
-        </Row>
-        <Row>
-          <h2 style={{  marginRight: "4%",
-                        marginLeft: "auto",
-                        marginTop: "0px",
-                        color: "white"  }}>কৃষক হাসলে হাসে দেশ</h2>
         </Row>
         <Row style={{ marginTop: "10%",
                       marginLeft: "5%",
