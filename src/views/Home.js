@@ -10,6 +10,7 @@ import bg from "../assets/img/homepage/BG.png"
 import fosholerDoctorLogo from "../assets/img/homepage/fosholer-doctor.png"
 import forumLogo from "../assets/img/homepage/forum.png"
 import krishiBazarLogo from "../assets/img/homepage/krishi-bazar.png"
+import kishanLogo from "../assets/img/homepage/kishan.png"
 import { Link } from "react-router-dom"
 
 function Home() {
@@ -21,10 +22,44 @@ function Home() {
                                 backgroundRepeat: "no-repeat",
                                 backgroundPosition: "center top",
                                 }}>
-        <Row style={{ marginTop: "50%",
+        <Row>
+          <img  src={kishanLogo}
+                            alt="Not Found"
+                            style = {{
+                              height: "250px",
+                              marginTop: "25px",
+                              marginLeft: "auto",
+                              marginRight: "10px",
+                              display: "block"
+                            }}
+          />
+        </Row>
+        <Row style={{ marginTop: "10%",
                       marginLeft: "5%",
                       marginRight: "5%",
                       position: "center",}}>
+            <Col>
+              <Link to="/krishi-forum">
+                <Card href="/krishi-bazar">
+                  <Card.Body>
+                    <img  src={forumLogo}
+                          alt="Not Found"
+                          style = {{
+                            width: "80px",
+                            height: "80px",
+                            marginLeft: "auto",
+                            marginRight: "auto",
+                            display: "block"
+                          }}
+                    />
+                  </Card.Body>
+                  <Card.Footer>
+                    <h3 style={{ textAlign: "center" }}>কৃষক ফোরাম</h3>
+                    </Card.Footer>
+                </Card>
+              </Link>
+            </Col>
+
             <Col>
               <Link to="/krishi-bazar">
                 <Card href="/krishi-bazar">
@@ -46,58 +81,29 @@ function Home() {
                 </Card>
               </Link>
             </Col>
+
             <Col>
-              <Card className="card-stats">
-                <Card.Body>
-                  <Row>
-                    <Col xs="5">
-                      <div className="icon-big text-center icon-warning">
-                        <i className="nc-icon nc-vector text-danger"></i>
-                      </div>
-                    </Col>
-                    <Col xs="7">
-                      <div className="numbers">
-                        <p className="card-category">ক্রয়কৃত পণ্য</p>
-                        <Card.Title as="h4">২৩</Card.Title>
-                      </div>
-                    </Col>
-                  </Row>
-                </Card.Body>
-                <Card.Footer>
-                  <hr></hr>
-                  <div className="stats">
-                    <i className="far fa-clock-o mr-1"></i>
-                    আডেট করুন
-                  </div>
-                </Card.Footer>
-              </Card>
+              <Link to="/krishi-bazar">
+                <Card href="/krishi-bazar">
+                  <Card.Body>
+                    <img  src={fosholerDoctorLogo}
+                          alt="Not Found"
+                          style = {{
+                            width: "80px",
+                            height: "80px",
+                            marginLeft: "auto",
+                            marginRight: "auto",
+                            display: "block"
+                          }}
+                    />
+                  </Card.Body>
+                  <Card.Footer>
+                    <h3 style={{ textAlign: "center" }}>ফসলের ডাক্তার</h3>
+                    </Card.Footer>
+                </Card>
+              </Link>
             </Col>
-            <Col>
-              <Card className="card-stats">
-                <Card.Body>
-                  <Row>
-                    <Col xs="5">
-                      <div className="icon-big text-center icon-warning">
-                        <i className="nc-icon nc-favourite-28 text-primary"></i>
-                      </div>
-                    </Col>
-                    <Col xs="7">
-                      <div className="numbers">
-                        <p className="card-category">রেটিং</p>
-                        <Card.Title as="h4">+45K</Card.Title>
-                      </div>
-                    </Col>
-                  </Row>
-                </Card.Body>
-                <Card.Footer>
-                  <hr></hr>
-                  <div className="stats">
-                    <i className="fas fa-redo mr-1"></i>
-                    আপডেট করুন
-                  </div>
-                </Card.Footer>
-              </Card>
-            </Col>
+            
         </Row>
       </Container>
     </>
