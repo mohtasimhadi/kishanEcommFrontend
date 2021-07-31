@@ -12,12 +12,10 @@ import forumLogo from "../assets/img/homepage/forum.png"
 import krishiBazarLogo from "../assets/img/homepage/krishi-bazar.png"
 import kishanLogo from "../assets/img/homepage/kishan.png"
 import { Link } from "react-router-dom"
-import Header from 'components/Navbars/Navbar'
 
 function Home() {
   return (
     <>
-      <Header/>
       <Container fluid style={{ backgroundImage: `url(${bg})`,
                                 backgroundSize: "100%",
                                 overflow: "hidden",
