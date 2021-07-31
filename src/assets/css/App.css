@@ -38,6 +38,17 @@ nav .left li a {
   color: #ffffff;
 }
 
+nav .left h {
+  font-size: 18px;
+  font-weight: 150;
+  margin-left: 3%;
+  color: white
+}
+
+nav .left h a {
+  color: white;
+}
+
 nav .right {
   text-align: right;
 }
