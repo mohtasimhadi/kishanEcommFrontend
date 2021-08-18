@@ -18,30 +18,6 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import KrishiBazarNavbar from './Navbars/KrishiBazarNavbar'
 import bgImage from 'assets/img/bgKrishiBazar.jpg'
 
-function ViewProduct(props, { image, name, price }) {
-  return (
-    <Modal
-      {...props}
-      size='lg'
-      aria-labelledby='contained-modal-title-vcenter'
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id='contained-modal-title-vcenter'>
-          <p>{name}</p>
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>{price}</p>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
-    </Modal>
-  )
-}
-
 const Products = (props) => {
   const [modalShow, setModalShow] = React.useState(false)
   const { products } = useContext(productContext)
@@ -268,33 +244,12 @@ const Products = (props) => {
                     </Card.Body>
                     <Row>
                       <div className='proButton'>
-                        <button onClick={() => setModalShow(true)}>
+                        <button>
                           পণ্য দেখুন
                         </button>
                       </div>
-                      <ViewProduct
-                        image={product.image}
-                        name={product.name}
-                        price={product.price}
-                        show={modalShow}
-                        onHide={() => setModalShow(false)}
-                      />
                     </Row>
                     <Row>
-                      <div className='proButton'>
-                        <button
-                          onClick={() =>
-                            dispatch({
-                              type: 'ADD_TO_CART',
-                              id: product.id,
-                              products,
-                            })
-                          }
-                          className='buyNow'
-                        >
-                          কার্টে যোগ করুন
-                        </button>
-                      </div>
                       {product.catagory === 'corp' ? (
                         <div className='corp'>শস্য</div>
                       ) : (
