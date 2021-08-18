@@ -15,7 +15,6 @@ import {
   Modal,
 } from 'react-bootstrap'
 import Dropdown from 'react-bootstrap/Dropdown'
-import KrishiBazarNavbar from './Navbars/KrishiBazarNavbar'
 import bgImage from 'assets/img/bgKrishiBazar.jpg'
 
 const Products = (props) => {
@@ -29,8 +28,9 @@ const Products = (props) => {
 
   return (
     <>
-      <KrishiBazarNavbar />
-      <Card style={{ marginTop: '60px' }}>
+      <Card style={{ marginTop: '2px',
+                     marginLeft: '5px',
+                     marginRight: '5px' }}>
         <Row
           style={{
             marginTop: '25px',
