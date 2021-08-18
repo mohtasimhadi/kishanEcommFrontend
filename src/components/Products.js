@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom"
 import { productContext } from 'Global/ProductContext'
 import { cartContext } from 'Global/CartContext'
 import {
@@ -16,6 +17,11 @@ import {
 } from 'react-bootstrap'
 import Dropdown from 'react-bootstrap/Dropdown'
 import bgImage from 'assets/img/bgKrishiBazar.jpg'
+import { Link } from "react-router-dom"
+
+function F(){
+    console.log("Button")
+}
 
 const Products = (props) => {
   const [modalShow, setModalShow] = React.useState(false)
@@ -242,13 +248,23 @@ const Products = (props) => {
                         {product.price}.00 টাকা
                       </h5>
                     </Card.Body>
+                    <Link to="/product">
                     <Row>
                       <div className='proButton'>
-                        <button>
+                      <button
+                          onClick={() =>
+                            dispatch({
+                              type: 'VIEW_PRODUCT',
+                              id: product.id,
+                              products,
+                            })
+                          }>
                           পণ্য দেখুন
                         </button>
                       </div>
+                      
                     </Row>
+                    </Link>
                     <Row>
                       {product.catagory === 'corp' ? (
                         <div className='corp'>শস্য</div>
