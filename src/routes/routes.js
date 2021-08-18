@@ -6,6 +6,7 @@ import KrishiForum from "views/KrishiForum"
 import Login from "views/Login"
 import Register from "views/Registration"
 import ViewProduct from "views/ViewProduct"
+import AdminDashboard from "views/Admin"
 
 const routes = [
   {
@@ -13,6 +14,13 @@ const routes = [
     name: "মূল পাতা",
     icon: "nc-icon nc-mobile",
     component: Home,
+    layout: "",
+  },
+  {
+    upgrade: true,
+    path: "/admin",
+    name: "অ্যাডমিন",
+    component: AdminDashboard,
     layout: "",
   },
   {

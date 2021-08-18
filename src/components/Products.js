@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom"
+import { BrowserRouter, Route, Switch, Redirect, useHistory } from "react-router-dom"
 import { productContext } from 'Global/ProductContext'
 import { cartContext } from 'Global/CartContext'
 import {
@@ -19,8 +19,8 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import bgImage from 'assets/img/bgKrishiBazar.jpg'
 import { Link } from "react-router-dom"
 
-function F(){
-    console.log("Button")
+function handleSubmit(){
+    const product = { productID: productID}
 }
 
 const Products = (props) => {
