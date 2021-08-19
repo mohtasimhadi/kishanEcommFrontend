@@ -1,60 +1,29 @@
 import React, { useContext } from 'react'
 import { productContext } from 'Global/ProductContext'
-import { cartContext } from 'Global/CartContext'
 import {
   Button,
   Card,
-  Table,
   Container,
   Row,
   Col,
   Form,
-  OverlayTrigger,
-  Tooltip,
-  ButtonGroup,
-  Modal,
+  ButtonGroup
 } from 'react-bootstrap'
 import Dropdown from 'react-bootstrap/Dropdown'
-import KrishiBazarNavbar from './Navbars/KrishiBazarNavbar'
 import bgImage from 'assets/img/bgKrishiBazar.jpg'
-
-function ViewProduct(props, { image, name, price }) {
-  return (
-    <Modal
-      {...props}
-      size='lg'
-      aria-labelledby='contained-modal-title-vcenter'
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id='contained-modal-title-vcenter'>
-          <p>{name}</p>
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>{price}</p>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
-    </Modal>
-  )
-}
+import { Link } from "react-router-dom"
 
 const Products = (props) => {
-  const [modalShow, setModalShow] = React.useState(false)
+  
   const { products } = useContext(productContext)
-  const { dispatch } = useContext(cartContext)
 
   // data destructure
 
-  console.log(props.products.data)
-
   return (
     <>
-      <KrishiBazarNavbar />
-      <Card style={{ marginTop: '60px' }}>
+      <Card style={{ marginTop: '2px',
+                     marginLeft: '5px',
+                     marginRight: '5px' }}>
         <Row
           style={{
             marginTop: '25px',
@@ -240,7 +209,7 @@ const Products = (props) => {
                     <Card.Header style={{ width: '220px', height: '200px' }}>
                       <img
                         src={product.image}
-                        alt='Not found'
+                        alt='দুঃখিত! পণ্যের ছবি পাওয়া যায়নি'
                         style={{
                           background: 'white',
                           width: '220px',
@@ -250,7 +219,7 @@ const Products = (props) => {
                       />
                     </Card.Header>
                     <Card.Body>
-                      <p style={{ marginTop: '10px', fontSize: '20px' }}>
+                      <p style={{ marginTop: '10px', fontSize: '20px', marginBottom: "0px" }}>
                         {product.name}
                       </p>
                       <p
@@ -258,60 +227,35 @@ const Products = (props) => {
                           marginTop: '0px',
                           color: 'grey',
                           fontSize: '12px',
+                          marginBottom: "0px"
                         }}
                       >
-                        সর্বনিম্ন অর্ডার
+                        সর্বনিম্ন অর্ডার {product.minOrder} {product.unitName}
                       </p>
-                      <h5 style={{ fontSize: '25px', color: 'green' }}>
-                        {product.price}.00 টাকা
-                      </h5>
+                      <p style={{ fontSize: '15px', color: 'green', marginBottom: "0px" }}>
+                        {product.price} টাকা/{product.unitName}
+                      </p>
                     </Card.Body>
+                    <Link to="/product">
                     <Row>
                       <div className='proButton'>
-                        <button onClick={() => setModalShow(true)}>
-                          পণ্য দেখুন
-                        </button>
-                      </div>
-                      <ViewProduct
-                        image={product.image}
-                        name={product.name}
-                        price={product.price}
-                        show={modalShow}
-                        onHide={() => setModalShow(false)}
-                      />
-                    </Row>
-                    <Row>
-                      <div className='proButton'>
-                        <button
+                      <button
                           onClick={() =>
                             dispatch({
-                              type: 'ADD_TO_CART',
+                              type: 'VIEW_PRODUCT',
                               id: product.id,
                               products,
                             })
-                          }
-                          className='buyNow'
-                        >
-                          কার্টে যোগ করুন
+                          }>
+                          পণ্য দেখুন
                         </button>
                       </div>
-                      {product.catagory === 'corp' ? (
-                        <div className='corp'>শস্য</div>
-                      ) : (
-                        ''
-                      )}
-                      {product.catagory === 'fish' ? (
-                        <div className='fish'>মাছ</div>
-                      ) : (
-                        ''
-                      )}
-                      {product.catagory === 'meat' ? (
-                        <div className='meat'>মাংস</div>
-                      ) : (
-                        ''
-                      )}
-                      {product.catagory === 'fruit' ? (
-                        <div className='fruit'>ফল</div>
+                      
+                    </Row>
+                    </Link>
+                    <Row>
+                      {product.category ? (
+                        <div className='corp'>{product.category}</div>
                       ) : (
                         ''
                       )}
